@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100vh;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, .1);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 500px;
+  transform: translate(-40%, -50%);
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.list-item {
+  height: 100px;
+  margin-bottom: 20px;
+  background-color: coral;
+  flex-shrink: 0;
+}
