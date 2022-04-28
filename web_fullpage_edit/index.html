@@ -8,6 +8,27 @@
     <div class="content-list"></div>
   </body>
   <script src="./js/templates.js"></script>
+  <script src="./js/buildNode.js"></script>
   <script src="./js/contentList.js"></script>
-  <!-- <script src="./js/buildNode.js"></script> -->
+  <script>
+    const display = document.querySelector('.display');
+    
+    const tem = templates[0];
+    const tempElement = document.createElement('div');
+    tempElement.style.background = '#fff';
+
+    tem.children.forEach(child => {
+      const el = document.createElement(child.type);
+      el.style.height = '500px';
+      if (Object.keys(child.styleSheet)) {
+        for ([key, value] of Object.entries(child.styleSheet)) {
+          el.style[key] = value;
+        }
+      }
+      el.innerHTML = child.content;
+      tempElement.appendChild(el);
+    });
+
+    display.appendChild(tempElement);
+  </script>
 </html>

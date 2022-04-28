@@ -3,10 +3,11 @@ const templates = [
     templateId: 't0',
     children: [
       {
-        type: 'div',
+        type: 'p',
         styleSheet: {
-          background: '#ccc'
+          background: '#ccc',
         },
+        className: [],
         content: 'one',
       }
     ]
@@ -15,10 +16,11 @@ const templates = [
     templateId: 't1',
     children: [
       {
-        type: 'div',
+        type: 'p',
         styleSheet: {
           background: '#ccc',
         },
+        className: [],
         content: 'two',
       }
     ]
