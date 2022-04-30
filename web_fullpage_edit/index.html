@@ -11,24 +11,36 @@
   <script src="./js/buildNode.js"></script>
   <script src="./js/contentList.js"></script>
   <script>
-    const display = document.querySelector('.display');
-    
-    const tem = templates[0];
-    const tempElement = document.createElement('div');
-    tempElement.style.background = '#fff';
+    const change = function(tem) {
+      const tempElement = document.createElement('div');
+      tempElement.style.background = '#fff';
+      tempElement.style.height = '100%';
 
-    tem.children.forEach(child => {
-      const el = document.createElement(child.type);
-      el.style.height = '500px';
-      if (Object.keys(child.styleSheet)) {
-        for ([key, value] of Object.entries(child.styleSheet)) {
-          el.style[key] = value;
+      tem.children.forEach(child => {
+        const el = document.createElement(child.type);
+        el.style.height = '500px';
+        if (Object.keys(child.styleSheet)) {
+          for ([key, value] of Object.entries(child.styleSheet)) {
+            el.style[key] = value;
+          }
         }
-      }
-      el.innerHTML = child.content;
-      tempElement.appendChild(el);
-    });
+        el.innerHTML = child.content;
+        tempElement.appendChild(el);
+      });
+      display.appendChild(tempElement);
+    }
 
-    display.appendChild(tempElement);
+    const display = document.querySelector('.display');
+    const tem = templates[0];
+    change(tem);
+
+    const list = document.querySelector('.content-list');
+    list.addEventListener('click', function(event) {
+      let id = event.target.id;
+      let numId = Number(id[1]);
+      display.removeChild(display.firstChild);
+      change(templates[numId]);
+      console.log();
+    })
   </script>
 </html>

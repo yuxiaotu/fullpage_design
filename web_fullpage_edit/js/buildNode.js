@@ -1,8 +1,9 @@
 /**
  * 构建内容
  */
-const buildNode = function(children, targetElement) {
+const buildNode = function(children, targetElement, elementId) {
   const tempElement = document.createElement('div');
+  tempElement.id = elementId;
   children.forEach(child => {
     const el = document.createElement(child.type);
     // 添加 style 样式

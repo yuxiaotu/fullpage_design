@@ -33,5 +33,4 @@ body {
 
 .content-list > div > * {
   color: red;
-  transform: scale(.5);
 }
