@@ -28,7 +28,7 @@ body {
   height: 100px;
   margin-bottom: 20px;
   flex-shrink: 0;
-  background-color: #fff;
+  height: 100px;
 }
 
 .content-list > div > * {

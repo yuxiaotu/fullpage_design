@@ -1,32 +1,42 @@
 const templates = [
   {
-    templateId: 't0',
+    templateId: "t0",
     children: [
       {
-        type: 'div',
+        type: "div",
+        id: "t0_1",
         styleSheet: {
-          background: '#ccc',
-          width: '30%',
-          height: '30%'
+          background: "#ccc",
         },
         className: [],
-        content: ''
-      }
-    ]
+        children: [
+          {
+            id: "t0_1_1",
+            type: "div",
+            styleSheet: {
+              background: "#fff",
+              width: "30%",
+              height: "30%",
+            },
+            className: [],
+            content: "Hello",
+          },
+        ],
+      },
+    ],
   },
   {
-    templateId: 't1',
+    templateId: "t1",
     children: [
       {
-        type: 'div',
+        type: "div",
+        id: "t1_1",
         styleSheet: {
-          background: 'blue',
-          width: '40%',
-          height: '40%'
+          background: "blue",
         },
         className: [],
-        content: ''
-      }
-    ]
-  }
-]
+        content: "",
+      },
+    ],
+  },
+];

@@ -9,38 +9,41 @@
   </body>
   <script src="./js/templates.js"></script>
   <script src="./js/buildNode.js"></script>
-  <script src="./js/contentList.js"></script>
+  <script src="./js/deepCopy.js"></script>
   <script>
-    const change = function(tem) {
-      const tempElement = document.createElement('div');
-      tempElement.style.background = '#fff';
-      tempElement.style.height = '100%';
+    // 预览列表
+    const contentList = document.querySelector('.content-list');
+    const templatesCopy = deepCopy(templates);
+    templatesCopy.forEach(temItem => {
+      buildNode(
+        temItem.children,
+        contentList,
+        {}
+      )
+    });
 
-      tem.children.forEach(child => {
-        const el = document.createElement(child.type);
-        el.style.height = '500px';
-        if (Object.keys(child.styleSheet)) {
-          for ([key, value] of Object.entries(child.styleSheet)) {
-            el.style[key] = value;
-          }
-        }
-        el.innerHTML = child.content;
-        tempElement.appendChild(el);
-      });
-      display.appendChild(tempElement);
-    }
-
+    // 工作区
     const display = document.querySelector('.display');
-    const tem = templates[0];
-    change(tem);
+    const switchTemplate = function(tem) {
+      tem.forEach(temItem => {
+        buildNode(
+          temItem.children,
+          display,
+          {
+            height: '100%'
+          }
+        )
+      })
+    }
+    const templateWorkspace = templatesCopy.slice(0, 1);
+    switchTemplate(templateWorkspace);
 
-    const list = document.querySelector('.content-list');
-    list.addEventListener('click', function(event) {
-      let id = event.target.id;
-      let numId = Number(id[1]);
+    // 预览列表事件
+    contentList.addEventListener('click', event => {
+      let id = event.target.id[1]
+      console.log(id);
       display.removeChild(display.firstChild);
-      change(templates[numId]);
-      console.log();
-    })
+      switchTemplate(templatesCopy.slice(id, id+1));
+    });
   </script>
 </html>
