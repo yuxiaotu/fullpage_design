@@ -31,6 +31,3 @@ body {
   height: 100px;
 }
 
-.content-list > div > * {
-  color: red;
-}

@@ -21,6 +21,11 @@
         {}
       )
     });
+    for (child of contentList.children) {
+      for (node of child.children) {
+        node.style.transform = node.style.transform + 'scale(.2)';
+      }
+    }
 
     // 工作区
     const display = document.querySelector('.display');
@@ -30,7 +35,7 @@
           temItem.children,
           display,
           {
-            height: '100%'
+            height: '100%',
           }
         )
       })
