@@ -9,7 +9,7 @@ const templates = [
           position: "relative",
           "background-image": "linear-gradient( 135deg, #97ABFF 10%, #123597 100%)"
         },
-        className: [],
+        className: ['a'],
         children: [
           {
             id: "t0_1_1",
@@ -29,7 +29,6 @@ const templates = [
               "border": "1px solid rgba( 255, 255, 255, 0.18 )",
               "z-index": 2
             },
-            className: []
           },
           {
             id: "t0_1_2",
@@ -72,7 +71,6 @@ const templates = [
         styleSheet: {
           display: "flex",
         },
-        className: [],
         children: [
           {
             id: "t1_1_1",
@@ -83,7 +81,7 @@ const templates = [
               "background-image": "url(https://cdn.pixabay.com/photo/2021/11/18/21/58/sunflower-6807491_960_720.jpg)",
               "background-size": "cover"
             },
-            className: []
+            className: ['a']
           },
           {
             id: "t1_1_2",
@@ -93,7 +91,6 @@ const templates = [
               height: "100%",
               background: "#B9F8D3"
             },
-            className: []
           }
         ]
       },

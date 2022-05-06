@@ -20,7 +20,7 @@ const buildNode = function(children, targetElement, exp) {
     }
 
     // 添加 class 
-    if (childItem.className) {
+    if (childItem.hasOwnProperty("className") && childItem.className) {
       el.classList.add(...childItem.className);
     }
 

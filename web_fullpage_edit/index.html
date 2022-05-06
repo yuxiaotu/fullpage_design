@@ -21,6 +21,7 @@
         {}
       )
     });
+
     // for (child of contentList.children) {
     //   for (node of child.children) {
     //     node.style.transform = node.style.transform + 'scale(.8)';
@@ -50,5 +51,12 @@
       display.removeChild(display.firstChild);
       switchTemplate(templatesCopy.slice(id, id+1));
     });
+
+
+    const t0_1 = document.getElementById('t0_1');
+    t0_1.addEventListener('contextmenu', event => {
+      event.preventDefault();
+      console.log('mousedown');
+    })
   </script>
 </html>
